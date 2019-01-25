@@ -27,27 +27,15 @@ def won?(board)
 end
 
 def full?(board)
-  if board.all?{|space| space == "X" || space == "O"}
-    return true
-  else
-    return false
-  end
+  board.all?{|space| space == "X" || space == "O"}
 end
 
 def draw?(board)
-  if !won?(board) and full?(board)
-    return true
-  else
-    return false
-  end
+  !won?(board) && full?(board)
 end
 
 def over?(board)
-  if won?(board) || full?(board) || draw?(board)
-    return true
-  else
-    return false
-  end
+  won?(board) || full?(board) || draw?(board)
 end
 
 def winner(board)
